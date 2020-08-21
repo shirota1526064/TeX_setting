@@ -1,0 +1,48 @@
+{
+    "extensions.autoUpdate": false, //自動アップデートをしない
+    "latex-workshop.message.update.show": false,
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "ptex2pdf",
+            "tools": [
+                "ptex2pdf",//タイプセットに使うtoolの名前
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [//タイプセットに使うtool一覧
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "ptex2pdf",//ptex2pdf自体の設定はこれまでと一緒
+            "command": "ptex2pdf",
+            "args": [
+                "-interaction=nonstopmode",
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+
+    "files.autoGuessEncoding": true,
+    "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
+    "extensions.ignoreRecommendations": true,
+}
